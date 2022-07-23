@@ -1,0 +1,13 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+
+import com.example.demo.entity.Ciudad;
+
+
+public interface  CiudadService  {
+
+	public List<Ciudad> listarCiudades(); 
+
+}
