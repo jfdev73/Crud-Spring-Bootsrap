@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+
+	<div class="container">
+		<h1 th:text="${titulo}"></h1>
+		<div class="card bg-light">
+			<div class="card-header bg-dark text-white"></div>
+			<div class="card-body">
+				<form th:action="@{/productos/save}" th:object="${producto}"
+					method="post" enctype="multipart/form-data">
+					<br>
+					<div class="form-group row">
+					<input
+							th:field="*{id}" type="hidden" >
+						<label for="nombres" class="col-2">Nombre: </label> <input
+							th:field="*{nombre}" type="text" class="col-6  form-control-sm "
+							id="nombre" placeholder="Nombre del producto"> 
+							<small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" 
+							th:errors="*{nombre}"></small>
+					</div>
+					<br>
+					<div class="form-group row">
+						<label for="apellidos" class="col-2">Precio: </label> <input
+							th:field="*{precio}" type="text"
+							class="col-6  form-control-sm " id="precio"
+							placeholder="489"> <small class="form-text text-danger" th:if="${#fields.hasErrors('precio')}" 
+							th:errors="*{apellido}"></small>
+					</div>
+					<br>
+					
+					<div class="form-group row">
+						<label for="imagen" class="col-2">Foto: </label> <input
+							 type="file"
+							class="col-6  form-control-sm " id="imagen" name="file"
+							> 
+					</div>
+					<div class="card-footer bg-dark">
+						<input type="submit" class="btn btn-primary btn-sm"
+							value="Guardar" />
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+</html>

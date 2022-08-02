@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+<body>
+
+	<header th:replace="plantilla/template :: header"></header>
+	<div class="container">
+		<h1 th:text="${titulo}"></h1>
+	</div>
+
+	<div class="container">
+	<a class="btn btn-primary btn-small" th:href="@{/productos/new}" th:text="'Nuevo Producto'"></a>
+		<table class="table table-dark">
+			<thead>
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Precio</th>
+					<th></th>
+					<th></th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="producto:${productos}">
+					<th scope="row" th:text="${producto.id}"></th>
+					<td th:text="${producto.nombre}"></td>
+					<td th:text="${producto.precio}">></td>
+					<td><a class="btn btn-success btn-small" th:href="@{/productos/edit/} + ${producto.id}" th:text="'Editar'"
+					title="Editar Registro" ></a></td>
+					<td><a class="btn btn-danger btn-small" th:href="@{/productos/delete/} + ${producto.id}" th:text="'Eliminar'"
+					title="Eliminar Registro" onclick="return confirm('Esta seguro de eliminar el registro');"></a></td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+	<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+</html>
