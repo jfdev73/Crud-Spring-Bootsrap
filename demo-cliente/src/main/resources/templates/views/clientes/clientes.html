@@ -12,13 +12,14 @@
 	<a class="btn btn-primary btn-small" th:href="@{/clientes/new}" th:text="'Nuevo Cliente'"></a>
 		<table class="table table-dark">
 			<thead>
-				<tr>+*
+				<tr>
 					<th scope="col">Id</th>
 					<th scope="col">Nombre</th>
 					<th scope="col">Apellidos</th>
 					<th scope="col">Telefono</th>
 					<th scope="col">Correo</th>
 					<th scope="col">Ciudad</th>
+					<th scope="col">Fecha</th>
 					<th></th>
 					<th></th>
 					
@@ -32,6 +33,7 @@
 					<td th:text="${cliente.telefono}"></td>
 					<td th:text="${cliente.email}"></td>
 					<td th:text="${cliente.ciudad.ciudad}"></td>
+					<td th:text="${#temporals.format(cliente.fecha,'dd-MM-yyyy')}"></td>
 					<td><a class="btn btn-success btn-small" th:href="@{/clientes/edit/} + ${cliente.id}" th:text="'Editar'"
 					title="Editar Registro" ></a></td>
 					<td><a class="btn btn-danger btn-small" th:href="@{/clientes/delete/} + ${cliente.id}" th:text="'Eliminar'"
