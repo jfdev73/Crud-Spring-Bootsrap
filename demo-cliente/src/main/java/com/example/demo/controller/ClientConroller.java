@@ -59,6 +59,8 @@ public class ClientConroller {
 			 mensaje ="Nuevo Cliente";
 		}else {mensaje ="Editar Cliente";}
 		
+		System.out.println("valor del cliente -> "+cliente);
+		
 		if (result.hasErrors()) {
 			model.addAttribute("ciudades", listCiudades);
 			model.addAttribute("titulo", mensaje);

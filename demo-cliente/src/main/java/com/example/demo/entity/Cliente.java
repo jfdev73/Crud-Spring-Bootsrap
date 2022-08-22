@@ -14,10 +14,12 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 import lombok.Data;
+import lombok.ToString;
 
 @Entity
 @Table(name="clientes")
 @Data
+@ToString
 public class Cliente implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
@@ -29,8 +31,8 @@ public class Cliente implements Serializable{
 	private String nombre;
 	
 	@Column(name = "apellidos")
-	@NotEmpty
 	private String apellido;
+	
 	@NotEmpty
 	private String telefono;
 	@NotEmpty
@@ -40,7 +42,7 @@ public class Cliente implements Serializable{
 	
 	//@Column(name="ciudades")
 	@ManyToOne
-	@JoinColumn(name = "ciudades")
+	@JoinColumn(name = "ciudad")
 	private Ciudad ciudad;
 	
 
