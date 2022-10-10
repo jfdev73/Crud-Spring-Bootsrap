@@ -5,10 +5,19 @@
 </head>
 <body>
 <header th:replace="plantilla/template :: header"></header>
+<div class="container">
 <h1>Error 404 !</h1>
 <h2>Pagina no encontrada</h2>
+<br />
+<button class="btn btn-success" onclick="goBack()">&laquo;Regresar</button>
+</div>
 
 
 <footer th:replace="plantilla/template :: footer"></footer>
+<script>
+function goBack(){
+window.history.back();
+}
+</script>
 </body>
 </html>

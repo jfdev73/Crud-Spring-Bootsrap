@@ -8,3 +8,6 @@ INSERT INTO products(NAME, PRICE) VALUES ('Product 7', 200);
 INSERT INTO products(NAME, PRICE) VALUES ('Product 8', 200);
 INSERT INTO products(NAME, PRICE) VALUES ('Product 9', 200);
 INSERT INTO products(NAME, PRICE) VALUES ('Product 10', 200);
+
+INSERT INTO ciudades(ID, CIUDAD) VALUES (2, 'Toluca');
+INSERT INTO ciudades(ID, CIUDAD) VALUES (3, 'Metepec');
